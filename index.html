@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Belanja Toko</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Kalkulator Belanja Toko</h1>
+        <p>Silakan isi data belanjaan Anda pada form di bawah ini untuk menghitung total pembayaran.</p>
+
+        <!-- Formulir Input -->
+        <form id="formBelanja">
+            <div class="form-group">
+                <label for="namaBarang">Nama Barang:</label>
+                <input type="text" id="namaBarang" placeholder="Masukkan nama barang">
+            </div>
+
+            <div class="form-group">
+                <label for="harga">Harga Satuan (Rp):</label>
+                <input type="number" id="harga" placeholder="Contoh: 15000">
+            </div>
+
+            <div class="form-group">
+                <label for="jumlah">Jumlah Barang:</label>
+                <input type="number" id="jumlah" placeholder="Contoh: 5">
+            </div>
+
+            <div class="form-group">
+                <label for="status">Status Pembeli:</label>
+                <select id="status">
+                    <option value="Biasa">Biasa</option>
+                    <option value="Member">Member</option>
+                </select>
+            </div>
+
+            <button type="button" onclick="hitungBelanja()">Hitung</button>
+        </form>
+
+        <!-- Tabel Aturan Diskon -->
+        <div class="table-container">
+            <h3>Aturan Diskon</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Subtotal Belanja</th>
+                        <th>Diskon</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Kurang dari Rp50.000</td>
+                        <td>0%</td>
+                    </tr>
+                    <tr>
+                        <td>Rp50.000 sampai Rp99.999</td>
+                        <td>5%</td>
+                    </tr>
+                    <tr>
+                        <td>Rp100.000 ke atas</td>
+                        <td>10%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Status Member</strong></td>
+                        <td><strong>Tambahan 5%</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Elemen Kosong untuk Hasil Perhitungan dan Simulasi -->
+        <div id="hasil" class="hasil-box"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
